@@ -21,7 +21,7 @@ namespace EventTickets.Model
 
         public bool StillActive()
         {
-            return !HasBeenRedeemd & !HasExpired();
+            return !HasBeenRedeemed & !HasExpired();
         }
     }
 }
