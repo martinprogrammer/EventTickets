@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EventTickets.Repository
 {
-    public class RepositoryFactory
+    public static class RepositoryFactory
     {
         
 

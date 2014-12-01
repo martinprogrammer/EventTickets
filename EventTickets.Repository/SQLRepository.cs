@@ -15,6 +15,7 @@ namespace EventTickets.Repository
         public SQLRepository(ContextSQL context)
         {
             _context = context;
+            Database.SetInitializer<ContextSQL>(new ContextSQLInitialiser());
         }
 
         public SQLRepository()
