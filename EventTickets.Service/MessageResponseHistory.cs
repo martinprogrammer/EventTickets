@@ -19,5 +19,18 @@ namespace EventTickets.Service
         {
             return !_responseHistory.ContainsKey(correlationId);
         }
+
+        public void LongResponse(string correlationId, T response)
+        {
+            if (_responseHistory.ContainsKey(correlationId))
+                _responseHistory[correlationId] = response;
+            else
+                _responseHistory.Add(correlationId, response);
+        }
+
+        public T RetrievePreviousResponseFor(string corellationId)
+        {
+            return _responseHistory[corellationId];
+        }
     }
 }

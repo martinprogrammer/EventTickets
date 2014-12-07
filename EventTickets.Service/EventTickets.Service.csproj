@@ -39,10 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorLog.cs" />
     <Compile Include="MessageResponseHistory.cs" />
     <Compile Include="TicketPurchaseExtensionMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketReservationExtensionMethods.cs" />
+    <Compile Include="TicketService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EventTickets.Contracts\EventTickets.Contracts.csproj">
