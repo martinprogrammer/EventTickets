@@ -88,7 +88,7 @@ namespace EventTickets.Model
             throw new ApplicationException("There are no tickets available to reserve");
         }
 
-        private bool CanReserveTicket(int qty)
+        public bool CanReserveTicket(int qty)
         {
             return AvailableAllocation() >= qty;
         }
