@@ -33,5 +33,11 @@ namespace EventTickets.Repository
             _context.Events.Add(eventEntity);
             _context.SaveChanges();
         }
+
+
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
