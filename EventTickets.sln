@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTickets.Service", "Eve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{0810CA46-058B-4831-9557-44C4F782FE7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTickets.HttpHost", "EventTickets.HttpHost\EventTickets.HttpHost.csproj", "{796D9D08-1C17-4F48-B244-5C58033EF834}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{0810CA46-058B-4831-9557-44C4F782FE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0810CA46-058B-4831-9557-44C4F782FE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0810CA46-058B-4831-9557-44C4F782FE7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796D9D08-1C17-4F48-B244-5C58033EF834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796D9D08-1C17-4F48-B244-5C58033EF834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796D9D08-1C17-4F48-B244-5C58033EF834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796D9D08-1C17-4F48-B244-5C58033EF834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +72,6 @@ Global
 		{A9C53F10-EC00-429F-9954-6ADC6F9CBADE} = {6862D88E-81B8-4B29-9FE2-A9A4F275D5A1}
 		{D689E3E9-C7AB-4D40-BF51-114B2A98B002} = {6862D88E-81B8-4B29-9FE2-A9A4F275D5A1}
 		{0810CA46-058B-4831-9557-44C4F782FE7C} = {F7570C7B-E9F3-4CCA-BCF9-77181616075B}
+		{796D9D08-1C17-4F48-B244-5C58033EF834} = {6862D88E-81B8-4B29-9FE2-A9A4F275D5A1}
 	EndGlobalSection
 EndGlobal
