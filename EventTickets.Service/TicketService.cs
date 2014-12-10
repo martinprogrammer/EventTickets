@@ -4,6 +4,7 @@ using EventTickets.Model;
 using EventTickets.Repository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel.Activation;
 using System.Text;
@@ -32,7 +33,7 @@ namespace EventTickets.Service
         public DataContract.ReserveTicketResponse ReserveTicket(DataContract.ReserveTicketRequest reserveTicketRequest)
         {
             foreach (Event x in _eventRepository)
-                Console.WriteLine(x.Id);
+                Debug.Print(x.Id.ToString());
 
             ReserveTicketResponse response = new ReserveTicketResponse();
 

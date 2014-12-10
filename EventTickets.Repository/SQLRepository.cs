@@ -15,25 +15,30 @@ namespace EventTickets.Repository
         public SQLRepository(ContextSQL context)
         {
             _context = context;
-            Database.SetInitializer(new ContextSQLInitialiser());
-            this._context.Database.Initialize(true);
+            //Database.SetInitializer(new ContextSQLInitialiser());
+            //this._context.Database.Initialize(true);
+            //var x = _context.TicketPurchases.Count();
         }
 
         public SQLRepository()
         {
             _context = new ContextSQL();
-            Database.SetInitializer(new ContextSQLInitialiser());
+            //Database.SetInitializer(new ContextSQLInitialiser());
+            //this._context.Database.Initialize(true);
+            //var x = _context.TicketPurchases.Count();
             
         }
 
         public Event FindBy(Guid id)
         {
-            return _context.Events.Single(p=>p.Id==id);
+            var x = _context.Events.SingleOrDefault(p=>p.Id==id);
+            return x;
         }
 
         public void Save(Event eventEntity)
         {
-            _context.Events.Add(eventEntity);
+            //_context.Events.Add(eventEntity);
+            _context.Entry(eventEntity).State= EntityState.Modified;
             _context.SaveChanges();
         }
 

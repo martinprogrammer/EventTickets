@@ -18,7 +18,8 @@ namespace EventTickets.Model
 
         public bool HasExpired()
         {
-            return DateTime.Now > ExpiryTime;
+            var x =  DateTime.Now > ExpiryTime;
+            return x;
         }
 
         public bool StillActive()

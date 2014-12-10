@@ -24,7 +24,7 @@ namespace TestClient
 
             ReserveTicketResponse reservation = myService.ReserveTicket(new ReserveTicketRequest
             {
-                EventId = "6e79136c-c96a-496b-96fb-5e7d20e0cb31",
+                EventId = "7632ef29-64aa-4fc7-90aa-d86cf735f1a8",
                 TicketQuantity = 3
             });
 
@@ -33,7 +33,9 @@ namespace TestClient
 
             PurchaseTicketResponse purchase = myService.PurchaseTicket(new PurchaseTicketRequest
             {
-              ReservationId = reservation.ReservationNumber
+              ReservationId = reservation.ReservationNumber,
+              EventId = reservation.EventId,
+              
             });
 
             Console.WriteLine("{0} {1}", purchase.Message ?? "OK", purchase.TicketId);

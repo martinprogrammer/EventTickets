@@ -8,7 +8,7 @@ using EventTickets.Model;
 
 namespace EventTickets.Repository
 {
-    public class ContextSQLInitialiser : CreateDatabaseIfNotExists<ContextSQL>
+    public class ContextSQLInitialiser : DropCreateDatabaseIfModelChanges<ContextSQL>
     {
        protected override void Seed(ContextSQL context)
         {
