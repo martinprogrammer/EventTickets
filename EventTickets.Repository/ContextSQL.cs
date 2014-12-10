@@ -9,6 +9,14 @@ namespace EventTickets.Repository
 {
     public class ContextSQL : DbContext
     {
-        public DbSet<Event> Events;
+        public ContextSQL()
+        {
+            Database.SetInitializer(new ContextSQLInitialiser());
+            Database.Initialize(true);
+
+        }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<TicketReservation> TicketReservations { get; set; }
+        public DbSet<TicketPurchase> TicketPurchases { get; set; }
     }
 }

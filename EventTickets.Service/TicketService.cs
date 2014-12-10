@@ -23,7 +23,7 @@ namespace EventTickets.Service
         }
 
         public TicketService()
-            : this(new InMemoryRepository())
+            : this(new SQLRepository())
         {
 
         }
@@ -31,6 +31,9 @@ namespace EventTickets.Service
         private static MessageResponseHistory<PurchaseTicketResponse> _reservationResponse = new MessageResponseHistory<PurchaseTicketResponse>();
         public DataContract.ReserveTicketResponse ReserveTicket(DataContract.ReserveTicketRequest reserveTicketRequest)
         {
+            foreach (Event x in _eventRepository)
+                Console.WriteLine(x.Id);
+
             ReserveTicketResponse response = new ReserveTicketResponse();
 
             try

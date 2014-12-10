@@ -15,12 +15,15 @@ namespace EventTickets.Repository
         public SQLRepository(ContextSQL context)
         {
             _context = context;
-            Database.SetInitializer<ContextSQL>(new ContextSQLInitialiser());
+            Database.SetInitializer(new ContextSQLInitialiser());
+            this._context.Database.Initialize(true);
         }
 
         public SQLRepository()
         {
             _context = new ContextSQL();
+            Database.SetInitializer(new ContextSQLInitialiser());
+            
         }
 
         public Event FindBy(Guid id)
@@ -37,7 +40,7 @@ namespace EventTickets.Repository
 
         public System.Collections.IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            return _context.Events.AsEnumerable().GetEnumerator();
         }
     }
 }
