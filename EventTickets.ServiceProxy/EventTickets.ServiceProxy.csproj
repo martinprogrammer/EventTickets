@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0810CA46-058B-4831-9557-44C4F782FE7C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9C2C6E27-965D-42CE-847D-99AAC66170AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestClient</RootNamespace>
-    <AssemblyName>TestClient</AssemblyName>
+    <RootNamespace>EventTickets.ServiceProxy</RootNamespace>
+    <AssemblyName>EventTickets.ServiceProxy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,14 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="TicketServiceClientProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EventTickets.Contracts\EventTickets.Contracts.csproj">
@@ -72,21 +64,14 @@
       <Project>{9eb1c1be-626e-44e8-82c2-5835ee407e43}</Project>
       <Name>EventTickets.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EventTickets.ServiceProxy\EventTickets.ServiceProxy.csproj">
-      <Project>{9c2c6e27-965d-42ce-847d-99aac66170af}</Project>
-      <Name>EventTickets.ServiceProxy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EventTickets.WCF\EventTickets.WCF.csproj">
       <Project>{e8b61648-e8e2-490b-9829-2e67168200e0}</Project>
       <Name>EventTickets.WCF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EventTickets\EventTickets.csproj">
-      <Project>{00089234-e904-4d98-b799-3bf94ff4af7c}</Project>
-      <Name>EventTickets</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

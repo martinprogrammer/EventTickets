@@ -13,6 +13,7 @@ namespace EventTickets.Repository
         {
             Database.SetInitializer(new ContextSQLInitialiser());
             Database.Initialize(true);
+           
 
         }
         public DbSet<Event> Events { get; set; }

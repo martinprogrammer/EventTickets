@@ -5,25 +5,22 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace EventTickets.HttpHost
+namespace EventTickets.WCF
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "TicketService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select TicketService.svc or TicketService.svc.cs at the Solution Explorer and start debugging.
-    public class TicketService : ITicketService
+    public class TicketService : EventTickets.Contracts.ITicketService
     {
-        public void DoWork()
-        {
-        }
 
-        private TicketService _ticketService;
+        private EventTickets.Service.TicketService _ticketService;
 
         public TicketService()
-            : this(new TicketService())
+            : this(new EventTickets.Service.TicketService())
         {
 
         }
 
-        public TicketService(TicketService ticketService)
+        public TicketService(EventTickets.Service.TicketService ticketService)
         {
             _ticketService = ticketService;
         }
@@ -41,4 +38,5 @@ namespace EventTickets.HttpHost
             return _ticketService.PurchaseTicket(purchaseTicketRequest);
         }
     }
+
 }

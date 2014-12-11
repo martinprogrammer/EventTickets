@@ -1,7 +1,6 @@
 ﻿using EventTickets.DataContract;
 using EventTickets.Model;
-using EventTickets.Repository;
-using EventTickets.Service;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,13 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using EventTickets.WCF;
+using EventTickets.ServiceProxy;
+using System.ServiceModel;
+
 namespace TestClient
 {
     class Program
     {
         static void Main(string[] args)
         {
-            EventTickets.Service.TicketService myService = new TicketService();
+           EventTickets.Contracts.ITicketService myService;
+
+            myService = new TicketServiceClientProxy();
+            //EventTickets.Service.TicketService myService = new TicketService();
             //IEventRepository myRepository = new InMemoryRepository();
 
             //foreach (Event x in myRepository)
